@@ -1,0 +1,21 @@
+# RUN: mkdir -p %t && %clang_cc1 -cc1 -load %var_prefix_so -plugin var-prefix test3.cpp > %t/out.txt 2>&1
+# RUN: FileCheck %s --input-file=%t/out.txt
+
+# глобальная переменная
+# CHECK: global_counter
+
+# параметры
+# CHECK: param_x
+# CHECK: param_y
+
+# локальная
+# CHECK: local_result
+
+# static
+# CHECK: static_calls
+
+# второй параметр
+# CHECK: param_value
+
+# локальная
+# CHECK: local_temp

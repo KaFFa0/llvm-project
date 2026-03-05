@@ -1,0 +1,21 @@
+int base = 100;
+
+int add(int a, int b) {
+    int temp = a + b;
+    static int count = 0;
+    ++count;
+    return temp + base + count;
+}
+
+/*
+Ожидаемый вывод после плагина:
+
+int global_base = 100;
+
+int add(int param_a, int param_b) {
+    int local_temp = param_a + param_b;
+    static int static_count = 0;
+    ++static_count;
+    return local_temp + global_base + static_count;
+}
+*/

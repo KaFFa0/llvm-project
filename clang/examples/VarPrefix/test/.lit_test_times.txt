@@ -1,0 +1,4 @@
+2.991271e-02 SampleInput.test
+3.029943e-02 test1.test
+2.998471e-02 test2.test
+3.029680e-02 test3.test

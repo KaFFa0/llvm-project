@@ -1,0 +1,23 @@
+int total = 0;
+
+void increment() {
+    static int calls = 0;
+    int x = 5;
+    int y = 10;
+    ++calls;
+    total += x + y + calls;
+}
+
+/*
+Ожидаемый вывод после плагина:
+
+int global_total = 0;
+
+void increment() {
+    static int static_calls = 0;
+    int local_x = 5;
+    int local_y = 10;
+    ++static_calls;
+    global_total += local_x + local_y + static_calls;
+}
+*/

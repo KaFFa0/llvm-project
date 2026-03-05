@@ -1,0 +1,8 @@
+# RUN: mkdir -p %t && %clang_cc1 -cc1 -load %var_prefix_so -plugin var-prefix test2.cpp > %t/out.txt 2>&1
+# RUN: FileCheck %s --input-file=%t/out.txt
+
+# Проверяем префиксы
+# CHECK: global_total
+# CHECK: static_calls
+# CHECK: local_x
+# CHECK: local_y

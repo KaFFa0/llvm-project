@@ -1,0 +1,9 @@
+# RUN: mkdir -p %t && %clang_cc1 -cc1 -load %var_prefix_so -plugin var-prefix SampleInput.cpp > %t/out.txt 2>&1
+# RUN: FileCheck %s --input-file=%t/out.txt
+
+# Проверяем префиксы переменных
+# CHECK: global_var1
+# CHECK: param_a
+# CHECK: param_b
+# CHECK: static_var2
+# CHECK: local_var3
