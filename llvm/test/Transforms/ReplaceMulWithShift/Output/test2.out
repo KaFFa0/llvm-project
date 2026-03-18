@@ -1,0 +1,8 @@
+; ModuleID = '/home/kaffa/llvm-project/llvm/test/Transforms/ReplaceMulWithShift/test2.ll'
+source_filename = "/home/kaffa/llvm-project/llvm/test/Transforms/ReplaceMulWithShift/test2.ll"
+
+define i32 @mul_not_pow2(i32 %x) {
+entry:
+  %0 = mul i32 %x, 6
+  ret i32 %0
+}
